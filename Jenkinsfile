@@ -9,10 +9,10 @@ pipeline{
         stage('Git Checkout'){
 
             steps {
-            gitCheckout{
+            gitCheckout(
                 branch: "main"
                 url: "https://github.com/pvass24/Jenkins-CI-CD-Pipeline.git"
-            }
+            )
             }
         }
 
