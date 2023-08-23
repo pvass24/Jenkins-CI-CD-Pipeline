@@ -36,7 +36,8 @@ pipeline{
             steps{
                script{
                    
-                helloAWS("${params.myRole}","${params.region}","${params.aws_account_id}", "${params.myDuration}")
+                helloAWS("${params.myRole}", "${params.region}", "${params.aws_account_id}", "${params.myDuration}")
+
                }
             }
         }
