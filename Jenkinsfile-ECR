@@ -102,6 +102,7 @@ pipeline{
                script{
                    
                    sh 'echo $PATH'
+                   sh 'echo `whoami`'
                }
             }
         }
