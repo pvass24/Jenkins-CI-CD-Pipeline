@@ -34,7 +34,7 @@ pipeline{
             steps{
                script{
                    
-                helloAWS()
+                helloAWS("${params.region}")
                     
                }
             }
