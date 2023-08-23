@@ -36,10 +36,8 @@ pipeline{
                    
                 withAWS(region:"${params.Region}")
             
-                    sh `aws s3 ls`
+                    sh aws s3 ls
                     
-                    
-             
                }
             }
         }
@@ -80,6 +78,18 @@ pipeline{
                    
                    def SonarQubecredentialsId = 'sonarqube-api'
                    QualityGateStatus(SonarQubecredentialsId)
+               }
+            }
+        }
+        stage('Check Jenkins $Path '){
+         when { expression {  params.action == 'create' } }
+            steps{
+               script{
+                   
+                withAWS(region:"${params.Region}")
+            
+                    sh aws s3 ls
+                    
                }
             }
         }
