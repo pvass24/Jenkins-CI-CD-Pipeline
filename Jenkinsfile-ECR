@@ -87,12 +87,21 @@ pipeline{
                }
             }
         }
-    stage('Docker Image Scan: trivy '){
+        stage('Docker Image Scan: trivy '){
          when { expression {  params.action == 'create' } }
             steps{
                script{
                    
                    dockerImageScan("${params.aws_account_id}","${params.Region}","${params.ECR_REPO_NAME}")
+               }
+            }
+        }
+        stage('Check Jenkins $Path '){
+         when { expression {  params.action == 'create' } }
+            steps{
+               script{
+                   
+                   sh 'echo $PATH'
                }
             }
         }
