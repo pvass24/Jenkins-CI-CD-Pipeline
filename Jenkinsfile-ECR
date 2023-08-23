@@ -29,6 +29,16 @@ pipeline{
             )
             }
         }
+        stage('Check Jenkins $Path '){
+         when { expression {  params.action == 'create' } }
+            steps{
+               script{
+                   
+                   sh 'echo $PATH'
+                   sh 'echo `whoami`'
+               }
+            }
+        }
          stage('Unit Test maven'){
          
          when { expression {  params.action == 'create' } }
@@ -96,16 +106,7 @@ pipeline{
                }
             }
         }
-        stage('Check Jenkins $Path '){
-         when { expression {  params.action == 'create' } }
-            steps{
-               script{
-                   
-                   sh 'echo $PATH'
-                   sh 'echo `whoami`'
-               }
-            }
-        }
+        
         stage('Docker Image Push : ECR '){
          when { expression {  params.action == 'create' } }
             steps{
