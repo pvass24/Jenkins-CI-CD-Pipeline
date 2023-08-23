@@ -31,13 +31,12 @@ pipeline{
             )
             }
         }
-        stage('Check Jenkins $Path '){
+        stage('Check Jenkins $Path'){
          when { expression {  params.action == 'create' } }
             steps{
                script{
                    
-                helloAWS("${params.myRole}",${params.region}","${params.aws_account_id}", "${params.myDuration}")
-                    
+                helloAWS("${params.myRole}","${params.region}","${params.aws_account_id}", "${params.myDuration}")
                }
             }
         }
