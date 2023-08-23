@@ -81,18 +81,18 @@ pipeline{
                }
             }
         }
-        stage('Check Jenkins $Path '){
-         when { expression {  params.action == 'create' } }
-            steps{
-               script{
+        // stage('Check Jenkins $Path '){
+        //  when { expression {  params.action == 'create' } }
+        //     steps{
+        //        script{
                    
-                withAWS(region:"${params.Region}")
+        //         withAWS(region:"${params.Region}")
             
-                    sh aws s3 ls
+        //             sh aws s3 ls
                     
-               }
-            }
-        }
+        //        }
+        //     }
+        // }
         stage('Maven Build : maven'){
          when { expression {  params.action == 'create' } }
             steps{
