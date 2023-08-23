@@ -34,9 +34,7 @@ pipeline{
             steps{
                script{
                    
-                withAWS(region:"${params.Region}")
-            
-                    sh aws s3 ls
+                helloAWS()
                     
                }
             }
