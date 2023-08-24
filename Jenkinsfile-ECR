@@ -131,7 +131,7 @@ pipeline{
             steps{
                script{
                    
-                   dockerImagePushECR("${params.aws_account_id}","${params.Region}","${params.ECR_REPO_NAME}")
+                   dockerImagePushECR("${params.aws_account_id}","${params.region}","${params.ECR_REPO_NAME}")
                }
             }
         }   
