@@ -38,7 +38,7 @@ pipeline{
                    
                 // helloAWS("${params.myRole}", "${params.region}", "${params.aws_account_id}", "${params.myDuration}")
 
-                helloAWS("Ec2SSMRole", "us-east-1", "681420940138", "3600")
+                helloAWS("Ec2SSMRole", "us-east-1", "681420940138", 3600)
 
                }
             }
